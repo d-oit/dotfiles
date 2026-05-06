@@ -1,0 +1,20 @@
+# Global direnv config
+# Automatically loads .env files in project directories
+
+use_nix() {
+  nix_direnv_manual_reload
+}
+
+# Auto-load .env if present (non-secret, use .env.local for secrets)
+layout_python-venv() {
+  local python=${1:-python3}
+  [[ $# -gt 0 ]] && shift
+  unset PYTHONHOME
+  if [[ -n $VIRTUAL_ENV ]]; then
+    VIRTUAL_ENV=$(realpath "${VIRTUAL_ENV}")
+  else
+    VIRTUAL_ENV=$(realpath ".venv")
+  fi
+  export VIRTUAL_ENV
+  PATH_add "$VIRTUAL_ENV/bin"
+}

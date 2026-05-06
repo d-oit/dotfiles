@@ -1,0 +1,26 @@
+// VS Code User Settings (reference — manually place in VS Code settings)
+// Actual path: %APPDATA%\Code\User\settings.json (Windows)
+//              ~/.config/Code/User/settings.json (Linux/WSL)
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.rulers": [100],
+  "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "rust-analyzer.check.command": "clippy",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
+}

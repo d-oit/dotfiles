@@ -1,0 +1,16 @@
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+
+# Backups created by install.sh
+*.bak

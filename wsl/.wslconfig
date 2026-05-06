@@ -1,0 +1,12 @@
+# Windows-side WSL2 config
+# Place at: C:\Users\<user>\.wslconfig
+
+[wsl2]
+processors=8
+memory=16GB
+swap=4GB
+swapFile=
+defaultVhdSize=64GB
+
+[experimental]
+autoMemoryReclaim=gradual
