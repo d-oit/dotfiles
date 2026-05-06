@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles for Dominik Oswald — WSL2 (Debian), Windows Dev Drive, Rust/TypeScript/Python dev environment.
+Personal dotfiles — WSL2 (Debian), Windows Dev Drive, Rust/TypeScript/Python dev environment.
 
 ## Structure
 
