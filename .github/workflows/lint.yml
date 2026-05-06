@@ -14,7 +14,7 @@ jobs:
     name: ShellCheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
@@ -25,7 +25,7 @@ jobs:
     name: EditorConfig
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: EditorConfig Checker
         uses: editorconfig-checker/action-editorconfig-checker@main
 
@@ -33,7 +33,7 @@ jobs:
     name: Secret Scanning (Gitleaks)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - uses: gitleaks/gitleaks-action@v2
