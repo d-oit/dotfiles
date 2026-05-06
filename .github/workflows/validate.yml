@@ -1,0 +1,19 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-sources:
+    name: Validate Source Files Exist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run source validation
+        run: bash .github/workflows/validate-symlinks.sh

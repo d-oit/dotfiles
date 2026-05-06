@@ -4,21 +4,38 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   shellcheck:
+    name: ShellCheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: ShellCheck
+      - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
           scandir: './scripts'
           severity: warning
 
   editorconfig:
+    name: EditorConfig
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: EditorConfig Checker
         uses: editorconfig-checker/action-editorconfig-checker@main
+
+  gitleaks:
+    name: Secret Scanning (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

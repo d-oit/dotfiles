@@ -1,0 +1,33 @@
+name: Bug Report
+description: Something is broken in the dotfiles setup
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting an issue with the dotfiles!
+  - type: textarea
+    id: description
+    attributes:
+      label: What's broken?
+      description: Describe the problem clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `scripts/install.sh`
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS: Debian (WSL2)
+        Shell: bash 5.x
+        Windows: 11
+    validations:
+      required: true
